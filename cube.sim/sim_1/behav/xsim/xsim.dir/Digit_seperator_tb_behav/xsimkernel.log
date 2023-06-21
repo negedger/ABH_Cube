@@ -1,0 +1,4 @@
+Running: xsim.dir/Digit_seperator_tb_behav/xsimk.exe -simmode gui -wdb Digit_seperator_tb_behav.wdb -simrunnum 0 -socket 64087
+Design successfully loaded
+Design Loading Memory Usage: 7144 KB (Peak: 7144 KB)
+Design Loading CPU Usage: 31 ms
