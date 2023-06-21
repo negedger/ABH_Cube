@@ -17,6 +17,7 @@ module Digit_seperator(
     reg [31:0] g3;
     reg [31:0] g4;
     reg [31:0] g5;
+    reg [31:0] g6;
     
     reg [31:0] tempdata = 32'd0;
     
@@ -26,6 +27,7 @@ module Digit_seperator(
     reg [3:0] thoscount = 4'd0;
     reg [3:0] hundcount = 4'd0;
     reg [3:0] tenthoscount = 4'd0;
+    reg [3:0] hunkcount = 4'd0;
     
     localparam [3:0]
         startstate = 4'd00,
@@ -113,12 +115,18 @@ module Digit_seperator(
                             end 
                         end 
             hunkstate: begin
-                    
-                   end 
-             
+                        if( data1 >= hunk) begin 
+                            data1 = data1 -hunk;   
+                            hunkcount = hunkcount + 1'b01;
+                            end 
+                         if (data1 <hunk) begin
+                            nextstate = tenkstate;
+                            g6 = hunkcount;
+                            end 
+                        end             
         endcase 
     end
-endmodule
+    endmodule
 
 
 module Digit_seperator_tb;
