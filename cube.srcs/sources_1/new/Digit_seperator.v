@@ -19,6 +19,9 @@ module Digit_seperator(
     reg [31:0] g5;
     reg [31:0] g6;
     
+    reg [31:0] a;
+    reg [31:0] b;
+    
     reg [31:0] tempdata = 32'd0;
     
     reg [3:0] state = 4'd0;
@@ -58,8 +61,8 @@ module Digit_seperator(
             startstate: begin                    
                     data1 = datain;
                     if(en)begin
-                    if(data1 >= tenk) begin
-                        nextstate = tenkstate;
+                    if(data1 >= tenk ) begin
+                        nextstate = hunkstate;
                     end 
                     else if(data1 < tenk) begin
                         nextstate = onekstate;
@@ -70,7 +73,10 @@ module Digit_seperator(
                     end                           
                    end 
             onestate: begin
-                    
+                        if(g1< 11) begin
+                        a = (g6 *10000)+(g5 *1000)+(g4*100)+(g3*10)+(g2);
+                        b = g1;
+                   end 
                    end 
             tenstate: begin
                     if(data1 >=ten) begin
@@ -105,7 +111,7 @@ module Digit_seperator(
                         end                
                        end 
             tenkstate: begin
-                        if( data1 >= tenk) begin 
+                        if( data1 >= tenk ) begin 
                             data1 = data1 -tenk;   
                             tenthoscount = tenthoscount + 1'b01;
                             end 
@@ -158,7 +164,7 @@ module Digit_seperator_tb;
     
     // Test case 1
     en = 1;
-    datain = 85638;
+    datain = 999865;
      
     // Test case 2
     /*en = 1;
