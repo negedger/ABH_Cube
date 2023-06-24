@@ -2,12 +2,12 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Thu Apr 27 23:50:33 2023
-# Process ID: 15196
+# Start of session at: Fri Jun 23 23:26:17 2023
+# Process ID: 6948
 # Current directory: D:/XILINX/cube/cube.runs/synth_1
-# Command line: vivado.exe -log cubenormal.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cubenormal.tcl
-# Log file: D:/XILINX/cube/cube.runs/synth_1/cubenormal.vds
+# Command line: vivado.exe -log division_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source division_core.tcl
+# Log file: D:/XILINX/cube/cube.runs/synth_1/division_core.vds
 # Journal file: D:/XILINX/cube/cube.runs/synth_1\vivado.jou
 # Running On: DESKTOP-JBSGIEN, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 2, Host memory: 4201 MB
 #-----------------------------------------------------------
-source cubenormal.tcl -notrace
+source division_core.tcl -notrace

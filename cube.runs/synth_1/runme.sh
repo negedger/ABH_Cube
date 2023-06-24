@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log cubenormal.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cubenormal.tcl
+EAStep vivado -log division_core.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source division_core.tcl
