@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1682619626">
-  <File Type="PA-TCL" Name="cubenormal.tcl"/>
-  <File Type="REPORTS-TCL" Name="cubenormal_reports.tcl"/>
-  <File Type="RDS-RDS" Name="cubenormal.vds"/>
-  <File Type="RDS-DCP" Name="cubenormal.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1687542968" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/cubenormal.dcp">
+  <File Type="PA-TCL" Name="division_core.tcl"/>
+  <File Type="REPORTS-TCL" Name="division_core_reports.tcl"/>
+  <File Type="RDS-RDS" Name="division_core.vds"/>
+  <File Type="RDS-UTIL" Name="division_core_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="division_core_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="division_core.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/cubenormal.v">
+    <File Path="$PSRCDIR/sources_1/new/reduction.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Digit_seperator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Division_module.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -15,8 +31,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="cubenormal"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="division_core"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -27,6 +42,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/cubenormal.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

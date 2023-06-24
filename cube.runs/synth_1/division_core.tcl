@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/XILINX/cube/cube.runs/synth_1/cubenormal.tcl"
+  variable script "D:/XILINX/cube/cube.runs/synth_1/division_core.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,10 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache C:/Users/User/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-11648-DESKTOP-JBSGIEN/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k70tfbv676-1
 
@@ -88,7 +84,11 @@ set_property ip_output_repo d:/XILINX/cube/cube.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib D:/XILINX/cube/cube.srcs/sources_1/new/cubenormal.v
+read_verilog -library xil_defaultlib {
+  D:/XILINX/cube/cube.srcs/sources_1/new/reduction.v
+  D:/XILINX/cube/cube.srcs/sources_1/new/Digit_seperator.v
+  D:/XILINX/cube/cube.srcs/sources_1/new/Division_module.v
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -99,10 +99,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental D:/XILINX/cube/cube.srcs/utils_1/imports/synth_1/cubenormal.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top cubenormal -part xc7k70tfbv676-1
+synth_design -top division_core -part xc7k70tfbv676-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -112,10 +114,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef cubenormal.dcp
+write_checkpoint -force -noxdef division_core.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file cubenormal_utilization_synth.rpt -pb cubenormal_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file division_core_utilization_synth.rpt -pb division_core_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
