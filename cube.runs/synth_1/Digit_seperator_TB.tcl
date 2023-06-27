@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/XILINX/cube/cube.runs/synth_1/division_core.tcl"
+  variable script "D:/XILINX/cube/cube.runs/synth_1/Digit_seperator_TB.tcl"
   variable category "vivado_synth"
 }
 
@@ -88,6 +88,8 @@ read_verilog -library xil_defaultlib {
   D:/XILINX/cube/cube.srcs/sources_1/new/reduction.v
   D:/XILINX/cube/cube.srcs/sources_1/new/Digit_seperator.v
   D:/XILINX/cube/cube.srcs/sources_1/new/Division_module.v
+  D:/XILINX/cube/cube.srcs/sources_1/new/LUT.v
+  D:/XILINX/cube/cube.srcs/sources_1/new/cube_finder.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -104,7 +106,7 @@ read_checkpoint -auto_incremental -incremental D:/XILINX/cube/cube.srcs/utils_1/
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top division_core -part xc7k70tfbv676-1
+synth_design -top Digit_seperator_TB -part xc7k70tfbv676-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -114,10 +116,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef division_core.dcp
+write_checkpoint -force -noxdef Digit_seperator_TB.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file division_core_utilization_synth.rpt -pb division_core_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file Digit_seperator_TB_utilization_synth.rpt -pb Digit_seperator_TB_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

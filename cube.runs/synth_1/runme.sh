@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log division_core.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source division_core.tcl
+EAStep vivado -log Digit_seperator_TB.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Digit_seperator_TB.tcl

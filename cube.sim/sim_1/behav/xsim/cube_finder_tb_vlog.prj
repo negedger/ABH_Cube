@@ -4,6 +4,7 @@ verilog xil_defaultlib  \
 "../../../../cube.srcs/sources_1/new/Digit_seperator.v" \
 "../../../../cube.srcs/sources_1/new/Division_module.v" \
 "../../../../cube.srcs/sources_1/new/LUT.v" \
+"../../../../cube.srcs/sources_1/new/cube_finder.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
