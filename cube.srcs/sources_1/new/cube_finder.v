@@ -17,9 +17,12 @@ module cube_finder(
   
   reg [31:0] data1;
   reg [31:0] data2;
+  reg [31:0] data3;
   
   wire [31:0] S1a;
   wire [31:0] S1b;
+  reg [31:0] S2a;
+  reg [31:0] S2b;
   
   //reg [31:0] S1DS_out;
   
@@ -29,8 +32,10 @@ module cube_finder(
   
   reg [3:0] state;
   reg [3:0] nextstate = 4'd0;
-  parameter [3:0] S1 = 4'b0000;
-  parameter [3:0] S2 = 4'b0001;
+  parameter [3:0] S0 = 4'd00;
+  parameter [3:0] S1 = 4'd01;
+  parameter [3:0] S2 = 4'd02;
+  parameter [3:0] S3 = 4'd03;
 
   always @(posedge clk) begin
   state = nextstate;
@@ -41,21 +46,34 @@ module cube_finder(
         if (en) begin
             data_in_ds = data1;
             en_ds = 1'b1;
+            
         if (read_ds) begin
             data2 = S1a;
+            data3 = S1b;
             S1_len = no_of_digits_out;
+            
+            if(data2 > 9) begin
+                nextstate = S2;
+                en_ds = 1'b0;
+            end              
         end
-        
         end
         // State transition
       end
 
       S2: begin
-         // ...
-         state = S1;
+        if(S1_len==3)begin
+            en_ds = 1'b01;
+            data_in_ds = data2;
+            
+            if (read_ds) begin
+                S2a = S1a;
+                S2b = S1b;            
+            end
+        end
       end
 
-      default: state = S1; // Initial state
+      default: nextstate = S1; // Initial state
     endcase
    // assign en_ds = en_ds_w;
     assign no_of_digits_out = no_of_digits_out_w;
@@ -103,7 +121,7 @@ module cube_finder_tb;
   initial begin
     clk = 0;
     en = 1;
-    datain = 32'd8568;
+    datain = 32'd123;
     #10;
     
     end

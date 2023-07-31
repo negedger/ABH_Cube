@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1687886073" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/cubenormal.dcp">
   <File Type="PA-TCL" Name="Digit_seperator_TB.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="Digit_seperator_TB_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Digit_seperator_TB_reports.tcl"/>
   <File Type="RDS-RDS" Name="Digit_seperator_TB.vds"/>
   <File Type="RDS-UTIL" Name="Digit_seperator_TB_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Digit_seperator_TB_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Digit_seperator_TB.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Digit_seperator_TB_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Digit_seperator_TB_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/reduction.v">
@@ -72,9 +69,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
