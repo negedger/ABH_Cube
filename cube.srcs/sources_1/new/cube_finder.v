@@ -13,6 +13,10 @@ module cube_finder(
   wire en_ds_w;
   wire read_ds;
 
+  reg [1:0] lut_select;
+  reg [3:0] lut_address;
+  wire [9:0] lut_data;
+    
   reg [31:0] data_in_ds;
   
   reg [31:0] data1;
@@ -68,7 +72,11 @@ module cube_finder(
             
             if (read_ds) begin
                 S2a = S1a;
-                S2b = S1b;            
+                S2b = S1b;
+                
+                lut_select = 2'b01;
+                lut_address = S2a;
+                                            
             end
         end
       end
@@ -89,10 +97,13 @@ Digit_seperator ds (
     .B_out(S1b)
   );
 
-endmodule
+LookupTable lut(
+    .select(lut_select),
+    .address(lut_address),
+    .data(lut_data)
+);
 
- 
- 
+endmodule
  
 module cube_finder_tb;
   
@@ -122,8 +133,7 @@ module cube_finder_tb;
     clk = 0;
     en = 1;
     datain = 32'd123;
-    #10;
-    
+    #10;    
     end
   
 endmodule
