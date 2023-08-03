@@ -13,9 +13,12 @@ module cube_finder(
   wire en_ds_w;
   wire read_ds;
 
+  reg [1:0] lut_count = 2'b00;
   reg [1:0] lut_select;
   reg [3:0] lut_address;
   wire [9:0] lut_data;
+  reg lut_en;
+  reg lut_c = 0;
     
   reg [31:0] data_in_ds;
   
@@ -27,6 +30,11 @@ module cube_finder(
   wire [31:0] S1b;
   reg [31:0] S2a;
   reg [31:0] S2b;
+  reg [31:0] S2la;
+  reg [31:0] S2lb;
+  reg [31:0] S2a_sub;
+  reg [31:0] S2b_sub;
+  reg [31:0] S2_sub;
   
   //reg [31:0] S1DS_out;
   
@@ -40,6 +48,7 @@ module cube_finder(
   parameter [3:0] S1 = 4'd01;
   parameter [3:0] S2 = 4'd02;
   parameter [3:0] S3 = 4'd03;
+  parameter [3:0] S2sub = 4'd04;
 
   always @(posedge clk) begin
   state = nextstate;
@@ -69,18 +78,43 @@ module cube_finder(
         if(S1_len==3)begin
             en_ds = 1'b01;
             data_in_ds = data2;
-            
+            lut_en=0;
+            if(lut_count ==3) begin
+               // lut_c = ~lut_c;
+            end
+            if(lut_count ==0 && lut_c==1) begin
+               nextstate = S2sub;
+            end
+             
             if (read_ds) begin
                 S2a = S1a;
                 S2b = S1b;
+                lut_count = lut_count +1'b1;
                 
-                lut_select = 2'b01;
-                lut_address = S2a;
-                                            
+                if(lut_count == 3) begin
+                    lut_en = 1;
+                    lut_select = 2'b01; // 01 sqr
+                    lut_address = S2a;
+                    S2la = lut_data;
+                end
+                else if(lut_count == 2) begin
+                    lut_en = 1;
+                    lut_select = 2'b01; // 01 sqr
+                    lut_address = S2b;
+                    S2lb = lut_data;
+                    lut_c = ~lut_c;
+
+                end                                                
             end
         end
       end
-
+      S2sub: begin
+        S2a_sub = S2la; // a^2
+        S2a_sub = S2lb; // b^2
+       // s2sub = b^2 + (2ab *10 ) + (a^2 *100);
+        S2_sub = S2a_sub + ((32'd02 * S2a* S2b)*32'd10) + (S2a_sub * 32'd100);
+      end
+      
       default: nextstate = S1; // Initial state
     endcase
    // assign en_ds = en_ds_w;
@@ -100,7 +134,8 @@ Digit_seperator ds (
 LookupTable lut(
     .select(lut_select),
     .address(lut_address),
-    .data(lut_data)
+    .data(lut_data),
+    .en(lut_en)
 );
 
 endmodule

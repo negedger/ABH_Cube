@@ -3,6 +3,7 @@
 module LookupTable (
     input wire [1:0] select,
     input wire [3:0] address,
+    input wire en,
     output reg [9:0] data
 );
 
@@ -34,11 +35,13 @@ module LookupTable (
     end
 
     always @(*) begin
+        if (en) begin
         case (select)
             2'b01: data = rom_square[address];
             2'b10: data = rom_cube[address];
             default: data = 0;
         endcase
+    end
     end
 
 endmodule

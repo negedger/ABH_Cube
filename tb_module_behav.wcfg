@@ -3,224 +3,161 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="Digit_seperator_TB_behav.wdb" id="1">
+      <db_ref path="cube_finder_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="Digit_seperator_TB" />
+            <top_module name="cube_finder_tb" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="166.666 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,166.667 ns"></ZoomEndTime>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
       <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="274"></NameColumnWidth>
-      <ValueColumnWidth column_width="73"></ValueColumnWidth>
+      <NameColumnWidth column_width="270"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="49" />
-   <wvobject fp_name="/Digit_seperator_TB/clk" type="logic">
+   <WVObjectSize size="35" />
+   <wvobject fp_name="/cube_finder_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/en" type="logic">
+   <wvobject fp_name="/cube_finder_tb/en" type="logic">
       <obj_property name="ElementShortName">en</obj_property>
       <obj_property name="ObjectShortName">en</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/datain" type="array">
+   <wvobject fp_name="/cube_finder_tb/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/datain" type="array">
       <obj_property name="ElementShortName">datain[31:0]</obj_property>
       <obj_property name="ObjectShortName">datain[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/read" type="logic">
-      <obj_property name="ElementShortName">read</obj_property>
-      <obj_property name="ObjectShortName">read</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dataout" type="array">
+      <obj_property name="ElementShortName">dataout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/no_of_digits" type="array">
-      <obj_property name="ElementShortName">no_of_digits[3:0]</obj_property>
-      <obj_property name="ObjectShortName">no_of_digits[3:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/len_of_data1" type="array">
+      <obj_property name="ElementShortName">len_of_data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">len_of_data1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/A_out" type="array">
-      <obj_property name="ElementShortName">A_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">A_out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/B_out" type="array">
-      <obj_property name="ElementShortName">B_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">B_out[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/clk" type="logic">
+   <wvobject fp_name="/cube_finder_tb/dut/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/en" type="logic">
+   <wvobject fp_name="/cube_finder_tb/dut/en" type="logic">
       <obj_property name="ElementShortName">en</obj_property>
       <obj_property name="ObjectShortName">en</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/datain" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/datain" type="array">
       <obj_property name="ElementShortName">datain[31:0]</obj_property>
       <obj_property name="ObjectShortName">datain[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/read" type="logic">
-      <obj_property name="ElementShortName">read</obj_property>
-      <obj_property name="ObjectShortName">read</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/dataout" type="array">
+      <obj_property name="ElementShortName">dataout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/no_of_digits" type="array">
-      <obj_property name="ElementShortName">no_of_digits[3:0]</obj_property>
-      <obj_property name="ObjectShortName">no_of_digits[3:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/len_of_data1" type="array">
+      <obj_property name="ElementShortName">len_of_data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">len_of_data1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/A_out" type="array">
-      <obj_property name="ElementShortName">A_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">A_out[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/en_ds" type="logic">
+      <obj_property name="ElementShortName">en_ds</obj_property>
+      <obj_property name="ObjectShortName">en_ds</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/B_out" type="array">
-      <obj_property name="ElementShortName">B_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">B_out[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/en_ds_w" type="logic">
+      <obj_property name="ElementShortName">en_ds_w</obj_property>
+      <obj_property name="ObjectShortName">en_ds_w</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/data1" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/read_ds" type="logic">
+      <obj_property name="ElementShortName">read_ds</obj_property>
+      <obj_property name="ObjectShortName">read_ds</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/lut_select" type="array">
+      <obj_property name="ElementShortName">lut_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_select[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/lut_address" type="array">
+      <obj_property name="ElementShortName">lut_address[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_address[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/lut_data" type="array">
+      <obj_property name="ElementShortName">lut_data[9:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_data[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/data_in_ds" type="array">
+      <obj_property name="ElementShortName">data_in_ds[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_ds[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/data1" type="array">
       <obj_property name="ElementShortName">data1[31:0]</obj_property>
       <obj_property name="ObjectShortName">data1[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/data2" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/data2" type="array">
       <obj_property name="ElementShortName">data2[31:0]</obj_property>
       <obj_property name="ObjectShortName">data2[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/data3" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/data3" type="array">
       <obj_property name="ElementShortName">data3[31:0]</obj_property>
       <obj_property name="ObjectShortName">data3[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/data4" type="array">
-      <obj_property name="ElementShortName">data4[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data4[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1a" type="array">
+      <obj_property name="ElementShortName">S1a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1a[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g1" type="array">
-      <obj_property name="ElementShortName">g1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g1[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1b" type="array">
+      <obj_property name="ElementShortName">S1b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1b[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g2" type="array">
-      <obj_property name="ElementShortName">g2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g2[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S2a" type="array">
+      <obj_property name="ElementShortName">S2a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2a[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g3" type="array">
-      <obj_property name="ElementShortName">g3[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g3[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S2b" type="array">
+      <obj_property name="ElementShortName">S2b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2b[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g4" type="array">
-      <obj_property name="ElementShortName">g4[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g4[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1_len" type="array">
+      <obj_property name="ElementShortName">S1_len[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1_len[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g5" type="array">
-      <obj_property name="ElementShortName">g5[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g5[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/no_of_digits_out" type="array">
+      <obj_property name="ElementShortName">no_of_digits_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_digits_out[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/g6" type="array">
-      <obj_property name="ElementShortName">g6[31:0]</obj_property>
-      <obj_property name="ObjectShortName">g6[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/no_of_digits_out_w" type="array">
+      <obj_property name="ElementShortName">no_of_digits_out_w[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_digits_out_w[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/a" type="array">
-      <obj_property name="ElementShortName">a[31:0]</obj_property>
-      <obj_property name="ObjectShortName">a[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/b" type="array">
-      <obj_property name="ElementShortName">b[31:0]</obj_property>
-      <obj_property name="ObjectShortName">b[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tempdata" type="array">
-      <obj_property name="ElementShortName">tempdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">tempdata[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/digit_counter" type="array">
-      <obj_property name="ElementShortName">digit_counter[3:0]</obj_property>
-      <obj_property name="ObjectShortName">digit_counter[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/state" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/state" type="array">
       <obj_property name="ElementShortName">state[3:0]</obj_property>
       <obj_property name="ObjectShortName">state[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/nextstate" type="array">
+   <wvobject fp_name="/cube_finder_tb/dut/nextstate" type="array">
       <obj_property name="ElementShortName">nextstate[3:0]</obj_property>
       <obj_property name="ObjectShortName">nextstate[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tencount" type="array">
-      <obj_property name="ElementShortName">tencount[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tencount[3:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S0" type="array">
+      <obj_property name="ElementShortName">S0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S0[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/thoscount" type="array">
-      <obj_property name="ElementShortName">thoscount[3:0]</obj_property>
-      <obj_property name="ObjectShortName">thoscount[3:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1" type="array">
+      <obj_property name="ElementShortName">S1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S1[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hundcount" type="array">
-      <obj_property name="ElementShortName">hundcount[3:0]</obj_property>
-      <obj_property name="ObjectShortName">hundcount[3:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S2" type="array">
+      <obj_property name="ElementShortName">S2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S2[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tenthoscount" type="array">
-      <obj_property name="ElementShortName">tenthoscount[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tenthoscount[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hunkcount" type="array">
-      <obj_property name="ElementShortName">hunkcount[3:0]</obj_property>
-      <obj_property name="ObjectShortName">hunkcount[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/startstate" type="array">
-      <obj_property name="ElementShortName">startstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">startstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/onestate" type="array">
-      <obj_property name="ElementShortName">onestate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">onestate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tenstate" type="array">
-      <obj_property name="ElementShortName">tenstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tenstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hunstate" type="array">
-      <obj_property name="ElementShortName">hunstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">hunstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/onekstate" type="array">
-      <obj_property name="ElementShortName">onekstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">onekstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tenkstate" type="array">
-      <obj_property name="ElementShortName">tenkstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tenkstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hunkstate" type="array">
-      <obj_property name="ElementShortName">hunkstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">hunkstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/endstate" type="array">
-      <obj_property name="ElementShortName">endstate[3:0]</obj_property>
-      <obj_property name="ObjectShortName">endstate[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/one" type="array">
-      <obj_property name="ElementShortName">one[31:0]</obj_property>
-      <obj_property name="ObjectShortName">one[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/ten" type="array">
-      <obj_property name="ElementShortName">ten[31:0]</obj_property>
-      <obj_property name="ObjectShortName">ten[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hun" type="array">
-      <obj_property name="ElementShortName">hun[31:0]</obj_property>
-      <obj_property name="ObjectShortName">hun[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/onek" type="array">
-      <obj_property name="ElementShortName">onek[31:0]</obj_property>
-      <obj_property name="ObjectShortName">onek[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/tenk" type="array">
-      <obj_property name="ElementShortName">tenk[31:0]</obj_property>
-      <obj_property name="ObjectShortName">tenk[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Digit_seperator_TB/dut/hunk" type="array">
-      <obj_property name="ElementShortName">hunk[31:0]</obj_property>
-      <obj_property name="ObjectShortName">hunk[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S3" type="array">
+      <obj_property name="ElementShortName">S3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S3[3:0]</obj_property>
    </wvobject>
 </wave_config>

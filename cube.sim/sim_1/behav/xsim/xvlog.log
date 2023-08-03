@@ -1,0 +1,15 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/XILINX/cube/cube.srcs/sources_1/new/reduction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reduction
+INFO: [VRFC 10-311] analyzing module tb_module
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/XILINX/cube/cube.srcs/sources_1/new/Digit_seperator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Digit_seperator
+INFO: [VRFC 10-311] analyzing module Digit_seperator_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/XILINX/cube/cube.srcs/sources_1/new/Division_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module division_core
+INFO: [VRFC 10-311] analyzing module division_core_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/XILINX/cube/cube.srcs/sources_1/new/cube_finder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cube_finder
+INFO: [VRFC 10-311] analyzing module cube_finder_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/XILINX/cube/cube.srcs/sources_1/new/LUT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LookupTable
+INFO: [VRFC 10-311] analyzing module LookupTable_tb
