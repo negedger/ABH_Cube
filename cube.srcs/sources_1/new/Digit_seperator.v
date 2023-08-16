@@ -67,6 +67,20 @@ module Digit_seperator(
                     data1 = datain;
                     read = 1'b0;
                     digit_counter = 4'b0;
+                    no_of_digits = 4'd0;
+                    a = 32'd0;
+                    b = 32'd0;
+                    g1 = 32'd0; 
+                    g2 = 32'd0; 
+                    g3 = 32'd0; 
+                    g4 = 32'd0; 
+                    g5 = 32'd0; 
+                    g6 = 32'd0; 
+                    tencount = 4'd0;    
+                    thoscount = 4'd0;   
+                    hundcount = 4'd0;   
+                    tenthoscount = 4'd0;
+                    hunkcount = 4'd0;                                                               
                     
                     if(en)begin
                     if(data1 >= tenk ) begin
@@ -84,11 +98,26 @@ module Digit_seperator(
                         if(g1< 11) begin
                         a = (g6 *10000)+(g5 *1000)+(g4*100)+(g3*10)+(g2);
                         b = g1;
+                        if(a > 999) begin
+                            no_of_digits = 4'd05;
+                        end
+                        if(a > 99 && a <= 999) begin
+                            no_of_digits = 4'd04;
+                        end
+                        if(a > 9 && a<=99) begin
+                            no_of_digits = 4'd03;
+                        end
+                        if(a > 0 && a<=9) begin
+                            no_of_digits = 4'd02;
+                        end
+                        if(a < 0 && b < 10) begin
+                            no_of_digits = 4'd01;
+                        end
                         if(en) begin
                             read = 1'b1;
-                            no_of_digits = digit_counter;
                             A_out = a;
                             B_out = b;
+                            nextstate = startstate;
                         end                                                                       
                    end 
                    end 
@@ -189,7 +218,7 @@ module Digit_seperator_TB;
   initial begin
     // Initialize inputs
     en = 1;
-    datain = 32'd7896;
+    datain = 32'd12345;
     
     #100;
     en = 0;
