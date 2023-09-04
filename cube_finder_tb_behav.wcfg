@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="6.020001 us"></ZoomEndTime>
-      <Cursor1Time time="3.960000 us"></Cursor1Time>
+      <ZoomStartTime time="6.630000 us"></ZoomStartTime>
+      <ZoomEndTime time="18.720001 us"></ZoomEndTime>
+      <Cursor1Time time="8.645000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="260"></NameColumnWidth>
+      <NameColumnWidth column_width="255"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="56" />
    <wvobject fp_name="/cube_finder_tb/dut/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -60,8 +60,8 @@
       <obj_property name="ObjectShortName">read_ds</obj_property>
    </wvobject>
    <wvobject fp_name="/cube_finder_tb/dut/lut_count" type="array">
-      <obj_property name="ElementShortName">lut_count[1:0]</obj_property>
-      <obj_property name="ObjectShortName">lut_count[1:0]</obj_property>
+      <obj_property name="ElementShortName">lut_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_count[3:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cube_finder_tb/dut/lut_select" type="array">
@@ -157,19 +157,84 @@
       <obj_property name="ObjectShortName">S3_aa[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/cube_finder_tb/dut/S1_2na" type="array">
-      <obj_property name="ElementShortName">S1_2na[31:0]</obj_property>
-      <obj_property name="ObjectShortName">S1_2na[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1_2n" type="array">
+      <obj_property name="ElementShortName">S1_2n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1_2n[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/cube_finder_tb/dut/S1_3na" type="array">
-      <obj_property name="ElementShortName">S1_3na[31:0]</obj_property>
-      <obj_property name="ObjectShortName">S1_3na[31:0]</obj_property>
+   <wvobject fp_name="/cube_finder_tb/dut/S1_3n" type="array">
+      <obj_property name="ElementShortName">S1_3n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1_3n[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cube_finder_tb/dut/S4b2" type="array">
       <obj_property name="ElementShortName">S4b2[31:0]</obj_property>
       <obj_property name="ObjectShortName">S4b2[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5a" type="array">
+      <obj_property name="ElementShortName">S5a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5a[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5b" type="array">
+      <obj_property name="ElementShortName">S5b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5b[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5a1" type="array">
+      <obj_property name="ElementShortName">S5a1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5a1[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5b1" type="array">
+      <obj_property name="ElementShortName">S5b1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5b1[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_1n" type="array">
+      <obj_property name="ElementShortName">S5_1n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_1n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_2n" type="array">
+      <obj_property name="ElementShortName">S5_2n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_2n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_3n" type="array">
+      <obj_property name="ElementShortName">S5_3n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_3n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_4n" type="array">
+      <obj_property name="ElementShortName">S5_4n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_4n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_aa" type="array">
+      <obj_property name="ElementShortName">S5_aa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_aa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_aaa" type="array">
+      <obj_property name="ElementShortName">S5_aaa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_aaa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_bb" type="array">
+      <obj_property name="ElementShortName">S5_bb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_bb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_bbb" type="array">
+      <obj_property name="ElementShortName">S5_bbb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_bbb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5_n" type="array">
+      <obj_property name="ElementShortName">S5_n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_n[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/cube_finder_tb/dut/S1_len" type="array">
@@ -220,6 +285,11 @@
    <wvobject fp_name="/cube_finder_tb/dut/S4" type="array">
       <obj_property name="ElementShortName">S4[3:0]</obj_property>
       <obj_property name="ObjectShortName">S4[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/cube_finder_tb/dut/S5" type="array">
+      <obj_property name="ElementShortName">S5[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S5[3:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

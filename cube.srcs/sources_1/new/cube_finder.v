@@ -6,7 +6,7 @@ module cube_finder(
   input wire ready,
   input wire [31:0] datain,
   output wire [31:0] dataout,
-  output wire [31:0] len_of_data1   
+  output wire [31:0] len_of_data1
 );
 
   reg en_ds;
@@ -68,6 +68,10 @@ module cube_finder(
   parameter [3:0] S3 = 4'd03;
   parameter [3:0] S4 = 4'd04;
   parameter [3:0] S5 = 4'd05;
+  parameter [3:0] S6 = 4'd06;
+  parameter [3:0] S7 = 4'd07;
+  parameter [3:0] S8 = 4'd08;
+  parameter [3:0] S9 = 4'd09;
 
   always @(posedge clk) begin
   state = nextstate;
@@ -82,7 +86,7 @@ module cube_finder(
         if (read_ds) begin
             data2 = S1a;
             data3 = S1b;
-            S1_len = no_of_digits_out;
+            S1_len = no_of_digits_out_w;
             
             if(data2 > 9) begin
                 nextstate = S2;
@@ -149,42 +153,62 @@ module cube_finder(
             lut_en = 1;
             lut_select = 2'b01; // 01 sqr
             lut_address = data3;
+            end
+         if(lut_count == 3) begin
             S4b2 = lut_data;
             //2nd and 3rd term of b³+(3*a*b²*10)+(3+a²*b*100)+a³*100
             //(3*a*b²*10)
             S1_2n = 32'd03 * data2 * S4b2 * 32'd10; 
             //(3+a²*b*100)
             S1_3n = 32'd03 * S3_aa * data3 * 32'd100;                        
-         end
-         if(lut_count == 3) begin
             nextstate = S5;
-            lut_count = 0;    
+            lut_en = 0;
+            lut_count = 0;
         end
       end
          S5: begin
-         lut_count = lut_count +1'b1;
-         S5a =  data2;
-         en_ds = 1;
-         data_in_ds = data2;
-         if(read_ds) begin
-            S5a1 = S1a;
-            S5b1 = S1b;
+            lut_count = lut_count +1'b1;
+             S5a =  data2;
+             en_ds = 1;
+             data_in_ds = data2;
+             if(read_ds) begin
+                S5a1 = S1a;
+                S5b1 = S1b;
+             end
+              if(lut_count == 15) begin
+                nextstate = S6;
+                lut_count = 0;                
+            end
          end
+         
+         S6:begin
+            lut_count = lut_count +1'b1;
+            if(lut_count == 2) begin
+            /*
+                lut_en = 1;
+                lut_select = 2'b10; // cube
+              // end
+            // if(lut_count == 5) begin
+                lut_address = S5a1;
+                S5_aaa = lut_data;                                 
+            */
+            end
+                                              
+         end 
+         
          // now put S5a1 and S5b1 in b³+(3*a*b²*10)+(3*a²*b*100)+a³*100
          //S5 4 terms
          //term1
-          if(lut_count == 2) begin
+         /*
+         if(lut_count == 6) begin
             lut_en = 1;
-            lut_select = 2'b10; // cube
+            lut_select = 2'b01; 
+         end
+         if(lut_count == 8) begin
             lut_address = S5b1;
-            S5_bbb = lut_data;                                 
+            S5_bb = lut_data;                                 
          end
-         if(lut_count == 4) begin
-            lut_en = 1;
-            lut_select = 2'b10; // cube
-            lut_address = S5a1;
-            S5_aaa = lut_data;                                 
-         end
+         
          if(lut_count == 6) begin
             lut_en = 1;
             lut_select = 2'b01; // sqr
@@ -196,22 +220,23 @@ module cube_finder(
             lut_select = 2'b01; // sqr
             lut_address = S5a1;
             S5_aa = lut_data;                                 
-         end
+         end 
          // b³+(3*a*b²*10)+(3*a²*b*100)+a³*100
-         if(lut_count == 10) begin
-         S5_1n = S5_bbb;
+         if(lut_count == 15) begin
+         S5_1n = S5_aaa * 32'd1000;
+         
          S5_2n = 32'd03 * S5a1 * S5_bb * 32'd10;
          S5_3n = 32'd03 * S5_aa * S5b1 * 32'd100;
          S5_4n = S5_aaa * 32'd100;
          S5_n = S5_1n + S5_1n + S5_1n + S5_1n;
-         
          end
-         end
+         */
+        
 
       default: nextstate = S1; // Initial state
     endcase
    // assign en_ds = en_ds_w;
-    assign no_of_digits_out = no_of_digits_out_w;
+    //assign no_of_digits_out = no_of_digits_out_w;
   end
   
 Digit_seperator ds (
@@ -228,7 +253,8 @@ LookupTable lut(
     .select(lut_select),
     .address(lut_address),
     .data(lut_data),
-    .en(lut_en)
+    .en(lut_en),
+    .clk(clk)
 );
 
 
