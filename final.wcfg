@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="65.017 ns"></ZoomStartTime>
+      <ZoomEndTime time="146.318 ns"></ZoomEndTime>
+      <Cursor1Time time="85.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="265"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="78" />
+   <wvobject fp_name="/testbench/uut/cube/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/dclk" type="logic">
+      <obj_property name="ElementShortName">dclk</obj_property>
+      <obj_property name="ObjectShortName">dclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_en" type="logic">
+      <obj_property name="ElementShortName">lut_en</obj_property>
+      <obj_property name="ObjectShortName">lut_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/read_ds" type="logic">
+      <obj_property name="ElementShortName">read_ds</obj_property>
+      <obj_property name="ObjectShortName">read_ds</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/en_ds" type="logic">
+      <obj_property name="ElementShortName">en_ds</obj_property>
+      <obj_property name="ObjectShortName">en_ds</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/datain" type="array">
+      <obj_property name="ElementShortName">datain[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datain[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_datain" type="array">
+      <obj_property name="ElementShortName">lut_datain[9:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_datain[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/A_in" type="array">
+      <obj_property name="ElementShortName">A_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/B_in" type="array">
+      <obj_property name="ElementShortName">B_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/no_of_digitsin" type="array">
+      <obj_property name="ElementShortName">no_of_digitsin[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_digitsin[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/dataout" type="array">
+      <obj_property name="ElementShortName">dataout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/digitsep_data" type="array">
+      <obj_property name="ElementShortName">digitsep_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">digitsep_data[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_select" type="array">
+      <obj_property name="ElementShortName">lut_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_select[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_address" type="array">
+      <obj_property name="ElementShortName">lut_address[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_address[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/len_of_data1" type="array">
+      <obj_property name="ElementShortName">len_of_data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">len_of_data1[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/en_ds_w" type="logic">
+      <obj_property name="ElementShortName">en_ds_w</obj_property>
+      <obj_property name="ObjectShortName">en_ds_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_count" type="array">
+      <obj_property name="ElementShortName">lut_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_count[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_data" type="array">
+      <obj_property name="ElementShortName">lut_data[9:0]</obj_property>
+      <obj_property name="ObjectShortName">lut_data[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/s2_counter" type="array">
+      <obj_property name="ElementShortName">s2_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s2_counter[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/lut_c" type="logic">
+      <obj_property name="ElementShortName">lut_c</obj_property>
+      <obj_property name="ObjectShortName">lut_c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/data_in_ds" type="array">
+      <obj_property name="ElementShortName">data_in_ds[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_ds[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/data1" type="array">
+      <obj_property name="ElementShortName">data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data1[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/data2" type="array">
+      <obj_property name="ElementShortName">data2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data2[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/data3" type="array">
+      <obj_property name="ElementShortName">data3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data3[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S1a" type="array">
+      <obj_property name="ElementShortName">S1a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1a[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S1b" type="array">
+      <obj_property name="ElementShortName">S1b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1b[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S2a" type="array">
+      <obj_property name="ElementShortName">S2a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2a[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S2b" type="array">
+      <obj_property name="ElementShortName">S2b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2b[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S2la" type="array">
+      <obj_property name="ElementShortName">S2la[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2la[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S2lb" type="array">
+      <obj_property name="ElementShortName">S2lb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S2lb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S1_bbb" type="array">
+      <obj_property name="ElementShortName">S1_bbb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1_bbb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3a_sub" type="array">
+      <obj_property name="ElementShortName">S3a_sub[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3a_sub[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3b_sub" type="array">
+      <obj_property name="ElementShortName">S3b_sub[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3b_sub[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3_aaa" type="array">
+      <obj_property name="ElementShortName">S3_aaa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3_aaa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3_aa" type="array">
+      <obj_property name="ElementShortName">S3_aa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3_aa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3_bbb" type="array">
+      <obj_property name="ElementShortName">S3_bbb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3_bbb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3_bb" type="array">
+      <obj_property name="ElementShortName">S3_bb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S3_bb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4_1n" type="array">
+      <obj_property name="ElementShortName">S4_1n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4_1n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4_2n" type="array">
+      <obj_property name="ElementShortName">S4_2n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4_2n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4_3n" type="array">
+      <obj_property name="ElementShortName">S4_3n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4_3n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4_4n" type="array">
+      <obj_property name="ElementShortName">S4_4n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4_4n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4n" type="array">
+      <obj_property name="ElementShortName">S4n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4b2" type="array">
+      <obj_property name="ElementShortName">S4b2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S4b2[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5a" type="array">
+      <obj_property name="ElementShortName">S5a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5a[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5b" type="array">
+      <obj_property name="ElementShortName">S5b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5b[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5aa" type="array">
+      <obj_property name="ElementShortName">S5aa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5aa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5bb" type="array">
+      <obj_property name="ElementShortName">S5bb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5bb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_1n" type="array">
+      <obj_property name="ElementShortName">S5_1n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_1n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_2n" type="array">
+      <obj_property name="ElementShortName">S5_2n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_2n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_3n" type="array">
+      <obj_property name="ElementShortName">S5_3n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_3n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5n" type="array">
+      <obj_property name="ElementShortName">S5n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_aa" type="array">
+      <obj_property name="ElementShortName">S5_aa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_aa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_aaa" type="array">
+      <obj_property name="ElementShortName">S5_aaa[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_aaa[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_bb" type="array">
+      <obj_property name="ElementShortName">S5_bb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_bb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_bbb" type="array">
+      <obj_property name="ElementShortName">S5_bbb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_bbb[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5_n" type="array">
+      <obj_property name="ElementShortName">S5_n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S5_n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6_1n" type="array">
+      <obj_property name="ElementShortName">S6_1n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S6_1n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6_2n" type="array">
+      <obj_property name="ElementShortName">S6_2n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S6_2n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6_3n" type="array">
+      <obj_property name="ElementShortName">S6_3n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S6_3n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6_4n" type="array">
+      <obj_property name="ElementShortName">S6_4n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S6_4n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6n" type="array">
+      <obj_property name="ElementShortName">S6n[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S6n[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S1_len" type="array">
+      <obj_property name="ElementShortName">S1_len[31:0]</obj_property>
+      <obj_property name="ObjectShortName">S1_len[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/no_of_digits_out" type="array">
+      <obj_property name="ElementShortName">no_of_digits_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_digits_out[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/no_of_digits_out_w" type="array">
+      <obj_property name="ElementShortName">no_of_digits_out_w[3:0]</obj_property>
+      <obj_property name="ObjectShortName">no_of_digits_out_w[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/nextstate" type="array">
+      <obj_property name="ElementShortName">nextstate[3:0]</obj_property>
+      <obj_property name="ObjectShortName">nextstate[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S0" type="array">
+      <obj_property name="ElementShortName">S0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S0[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S1" type="array">
+      <obj_property name="ElementShortName">S1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S1[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S2" type="array">
+      <obj_property name="ElementShortName">S2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S2[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S3" type="array">
+      <obj_property name="ElementShortName">S3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S3[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S4" type="array">
+      <obj_property name="ElementShortName">S4[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S4[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S5" type="array">
+      <obj_property name="ElementShortName">S5[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S5[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S6" type="array">
+      <obj_property name="ElementShortName">S6[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S6[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S7" type="array">
+      <obj_property name="ElementShortName">S7[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S7[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S8" type="array">
+      <obj_property name="ElementShortName">S8[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S8[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/cube/S9" type="array">
+      <obj_property name="ElementShortName">S9[3:0]</obj_property>
+      <obj_property name="ObjectShortName">S9[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

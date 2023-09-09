@@ -1,0 +1,16 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../cube.srcs/sources_1/new/reduction.v" \
+"../../../../cube.srcs/sources_1/new/Digit_seperator.v" \
+"../../../../cube.srcs/sources_1/new/Division_module.v" \
+"../../../../cube.srcs/sources_1/new/cube_finder.v" \
+"../../../../cube.srcs/sources_1/new/LUT.v" \
+"../../../../cube.srcs/sources_1/new/square_finder.v" \
+"../../../../cube.srcs/sources_1/new/topmodule.v" \
+"../../../../cube.srcs/sources_1/new/clkdvdr.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

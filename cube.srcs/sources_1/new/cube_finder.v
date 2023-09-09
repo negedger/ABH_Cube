@@ -2,23 +2,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 module cube_finder(
   input wire clk,
+  input wire dclk,
   input wire en,
+  output reg lut_en,
+  input wire read_ds,
+  output reg en_ds,
   input wire ready,
   input wire [31:0] datain,
-  output wire [31:0] dataout,
-  output wire [31:0] len_of_data1
+  input wire [9:0] lut_datain,
+  input wire [31:0] A_in,
+  input wire [31:0] B_in,
+  input wire [3:0] no_of_digitsin,
+  output reg [31:0] dataout,
+  output reg [31:0] digitsep_data,
+  output reg [1:0] lut_select,
+  output reg [3:0] lut_address,
+  output reg [31:0] len_of_data1
 );
 
-  reg en_ds;
   wire en_ds_w;
-  wire read_ds;
-
+ 
   reg [3:0] lut_count =0;
-  reg [1:0] lut_select;
-  reg [3:0] lut_address;
   wire [9:0] lut_data;
   reg [9:0] s2_counter = 0;
-  reg lut_en;
   reg lut_c = 0;
     
   reg [31:0] data_in_ds;
@@ -27,33 +33,50 @@ module cube_finder(
   reg [31:0] data2;
   reg [31:0] data3;
   
-  wire [31:0] S1a;
-  wire [31:0] S1b;
+  reg [31:0] S1a;
+  reg [31:0] S1b;
   reg [31:0] S2a;
   reg [31:0] S2b;
   reg [31:0] S2la;
   reg [31:0] S2lb;
+  reg [31:0] S1_bbb;
+  
   reg [31:0] S3a_sub;
   reg [31:0] S3b_sub;
+  reg [31:0] S3_aaa;
   reg [31:0] S3_aa;
-  reg [31:0] S1_2n;
-  reg [31:0] S1_3n;
+  reg [31:0] S3_bbb;
+  reg [31:0] S3_bb;
+  
+  reg [31:0] S4_1n;
+  reg [31:0] S4_2n;
+  reg [31:0] S4_3n;
+  reg [31:0] S4_4n;
+  reg [31:0] S4n;
+  
   reg [31:0] S4b2;
+  
   reg [31:0] S5a;
   reg [31:0] S5b;
-  reg [31:0] S5a1;
-  reg [31:0] S5b1;
+  reg [31:0] S5aa;
+  reg [31:0] S5bb;
   reg [31:0] S5_1n;
   reg [31:0] S5_2n;
   reg [31:0] S5_3n;
-  reg [31:0] S5_4n;
+  reg [31:0] S5n;
+  
   reg [31:0] S5_aa;
   reg [31:0] S5_aaa;
   reg [31:0] S5_bb;
   reg [31:0] S5_bbb;
   reg [31:0] S5_n;
 
-  
+  reg [31:0] S6_1n;
+  reg [31:0] S6_2n;
+  reg [31:0] S6_3n;
+  reg [31:0] S6_4n;
+  reg [31:0] S6n;
+    
   //reg [31:0] S1DS_out;
   
   reg [31:0] S1_len;
@@ -80,13 +103,15 @@ module cube_finder(
         data1 = datain;
         
         if (en) begin
-            data_in_ds = data1;
+            digitsep_data = data1;
             en_ds = 1'b1;
             
         if (read_ds) begin
-            data2 = S1a;
-            data3 = S1b;
-            S1_len = no_of_digits_out_w;
+            data2 = A_in;
+            data3 = B_in;
+            S1a = data2;
+            S1b = data3;
+           S1_len = no_of_digitsin;
             
             if(data2 > 9) begin
                 nextstate = S2;
@@ -101,163 +126,144 @@ module cube_finder(
         if(S1_len==3)begin
             en_ds = 1'b01;
             data_in_ds = data2;
-            lut_en=0;
-            if(s2_counter > 10) begin
-              nextstate = S3;
+            //lut_en=0;
+            if(s2_counter > 5 && S2a > 10) begin
+              lut_en=0;
+              S2la = S2a;
+              digitsep_data = S2a;
+              en_ds = 1'b1;
+            end
+            if(s2_counter > 9 ) begin 
+              S3a_sub = A_in;
+              S3b_sub = B_in;              
+              nextstate = S3;              
               lut_count = 0;
               s2_counter= 0;
-          end
+            end
                          
             if (read_ds) begin
-                S2a = S1a;
-                S2b = S1b;
+                S2a = A_in;
+                S2b = B_in;
                 lut_count = lut_count +1'b1;
-                
-                if(lut_count == 3) begin
-                    lut_en = 1;
-                    lut_select = 2'b01; // 01 sqr
-                    lut_address = S2a;
-                    S2la = lut_data;
-                    s2_counter = s2_counter + 1'b01;
-               end
-               
-               else if(lut_count == 2) begin
+                s2_counter = s2_counter + 1'b01;
+                            
+                if(lut_count == 4) begin
                     lut_en = 1;
                     lut_select = 2'b01; // 01 sqr
                     lut_address = S2b;
-                    S2lb = lut_data;
-               end                                                
+                   // S2lb = lut_datain;
+               end  
+                if(lut_count == 6) begin
+                    S2lb = lut_datain;
+               end  
+                              
+               //s1b³
+                 if(lut_count ==1) begin
+                    lut_en = 1;
+                    lut_select = 2'b10; // 01 sqr 
+                    lut_address = S1b;
+                  end    
+                 if(lut_count == 3) begin
+                    S1_bbb = lut_datain; 
+                  end                                                
             end
         end
       end
       
       S3: begin
-        S3b_sub = S2la; // a^2
-        S3a_sub = S2lb; // b^2
-       // S3_aa = b^2 + (2ab *10 ) + (a^2 *100);
-        S3_aa = S3b_sub + ((32'd02 * S2a* S2b)*32'd10) + (S3a_sub * 32'd100); 
-        s2_counter = s2_counter + 1'b01;
-     
-       if(s2_counter > 10) begin
-               nextstate = S4;
-               s2_counter= 0;
-           end
-       end
-      
-      S4: begin
-      //to set 2nd term 3ab^2*10
-      //b^2
-        lut_count = lut_count +1'b1;
- 
-        if(lut_count == 2) begin
+        //S2a = 1 S2b = 2
+         lut_en = 0;
+         lut_count = lut_count +1'b1;
+         //s3a³
+         if(lut_count ==1) begin
             lut_en = 1;
-            lut_select = 2'b01; // 01 sqr
-            lut_address = data3;
-            end
+            lut_select = 2'b10; // 01 sqr 
+            lut_address = S2a;
+          end    
          if(lut_count == 3) begin
-            S4b2 = lut_data;
-            //2nd and 3rd term of b³+(3*a*b²*10)+(3+a²*b*100)+a³*100
-            //(3*a*b²*10)
-            S1_2n = 32'd03 * data2 * S4b2 * 32'd10; 
-            //(3+a²*b*100)
-            S1_3n = 32'd03 * S3_aa * data3 * 32'd100;                        
-            nextstate = S5;
-            lut_en = 0;
-            lut_count = 0;
+            S3_aaa = lut_datain; 
+          end       
+         //s3b³
+         if(lut_count ==4) begin
+            lut_en = 1;
+            lut_select = 2'b10; // 01 sqr 
+            lut_address = S2b;
+          end    
+         if(lut_count == 6) begin
+            S3_bbb = lut_datain; 
+          end                 
+         //s3a²
+         if(lut_count ==7) begin
+            lut_en = 1;
+            lut_select = 2'b01; // 01 sqr 
+            lut_address = S2a;
+          end    
+         if(lut_count == 9) begin
+            S3_aa = lut_datain; 
+          end       
+         //s3b²
+         if(lut_count ==10) begin
+            lut_en = 1;
+            lut_select = 2'b01; // 01 sqr 
+            lut_address = S2b;
+          end    
+         if(lut_count == 12) begin
+            S3_bb = lut_datain; 
+          end
+        if(lut_count == 14) begin
+               nextstate = S4;
+               lut_count= 0;
+           end          
+       end          
+       
+      S4: begin
+        //
+        lut_count = lut_count +1'b1;
+        S4_1n = S3_aaa * 32'd1000;
+        S4_2n = 32'd03 * S3_aa * S2b * 32'd100;  
+        S4_3n = 32'd03 * S2a * S3_bb * 32'd10; 
+        S4_4n = S3_bbb;       
+        S4n = S4_1n + S4_2n + S4_3n + S4_4n;    
+        if(lut_count < 2) begin
+          nextstate = S5;    
+          lut_count= 0;
+          
         end
-      end
+        
+       end     
+
          S5: begin
-            lut_count = lut_count +1'b1;
-             S5a =  data2;
-             en_ds = 1;
-             data_in_ds = data2;
-             if(read_ds) begin
-                S5a1 = S1a;
-                S5b1 = S1b;
-             end
-              if(lut_count == 15) begin
-                nextstate = S6;
-                lut_count = 0;                
-            end
-         end
-         
-         S6:begin
+            S5a = S3a_sub;
+            S5aa = S3_aa;
+            S5b = S3b_sub;
+            S5bb = S3_bb;
+                    
+            S5_1n = S5aa * 32'd100;
+            S5_2n = 32'd02 * S5a * S5b * 32'd10;  
+            S5_3n =  S3_bb; 
+            S5n = S5_1n + S5_2n + S5_3n;
+            
             lut_count = lut_count +1'b1;
             if(lut_count == 2) begin
-            /*
-                lut_en = 1;
-                lut_select = 2'b10; // cube
-              // end
-            // if(lut_count == 5) begin
-                lut_address = S5a1;
-                S5_aaa = lut_data;                                 
-            */
+                nextstate = S6;    
+                lut_count= 0;
+                end
             end
-                                              
+         
+         S6:begin
+            S6_1n = S4n * 32'd1000;
+            S6_2n = 32'd03 * S5n * S1b * 32'd100;           
+            S6_3n = 32'd03 * S1a * S2lb * 32'd10; 
+            S6_4n = S1_bbb;  
+            S6n = S6_1n + S6_2n + S6_3n + S6_4n;                                        
          end 
-         
-         // now put S5a1 and S5b1 in b³+(3*a*b²*10)+(3*a²*b*100)+a³*100
-         //S5 4 terms
-         //term1
-         /*
-         if(lut_count == 6) begin
-            lut_en = 1;
-            lut_select = 2'b01; 
-         end
-         if(lut_count == 8) begin
-            lut_address = S5b1;
-            S5_bb = lut_data;                                 
-         end
-         
-         if(lut_count == 6) begin
-            lut_en = 1;
-            lut_select = 2'b01; // sqr
-            lut_address = S5b1;
-            S5_bb = lut_data;                                 
-         end
-         if(lut_count == 8) begin
-            lut_en = 1;
-            lut_select = 2'b01; // sqr
-            lut_address = S5a1;
-            S5_aa = lut_data;                                 
-         end 
-         // b³+(3*a*b²*10)+(3*a²*b*100)+a³*100
-         if(lut_count == 15) begin
-         S5_1n = S5_aaa * 32'd1000;
-         
-         S5_2n = 32'd03 * S5a1 * S5_bb * 32'd10;
-         S5_3n = 32'd03 * S5_aa * S5b1 * 32'd100;
-         S5_4n = S5_aaa * 32'd100;
-         S5_n = S5_1n + S5_1n + S5_1n + S5_1n;
-         end
-         */
-        
 
       default: nextstate = S1; // Initial state
     endcase
    // assign en_ds = en_ds_w;
     //assign no_of_digits_out = no_of_digits_out_w;
   end
-  
-Digit_seperator ds (
-    .clk(clk),
-    .en(en_ds),
-    .datain(data_in_ds),
-    .read(read_ds),
-    .no_of_digits(no_of_digits_out_w),
-    .A_out(S1a),
-    .B_out(S1b)
-  );
-
-LookupTable lut(
-    .select(lut_select),
-    .address(lut_address),
-    .data(lut_data),
-    .en(lut_en),
-    .clk(clk)
-);
-
-
+   
 endmodule
  
 module cube_finder_tb;
